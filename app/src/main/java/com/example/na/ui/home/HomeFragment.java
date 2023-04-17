@@ -4,12 +4,15 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.na.R;
 import com.example.na.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {
@@ -24,8 +27,16 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        /*final TextView textView = binding.textHome;
-        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);*/
+        Button btnHesabla = binding.btnHesabla;
+        btnHesabla.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String startDate = binding.startDate.getText().toString();
+                //binding.txtResDurationDay.setText("34");
+                String endDate = binding.endDate.getText().toString();
+                Toast.makeText(getActivity(), "Username ve şifrəni daxil edin"+startDate+" - "+endDate, Toast.LENGTH_SHORT).show();
+            }
+        });
         return root;
     }
 

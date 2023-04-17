@@ -26,7 +26,7 @@
             android:padding="24dp">
 
             <EditText
-                android:id="@+id/username"
+                android:id="@+id/startDate"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="40dp"
@@ -40,10 +40,9 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:id="@+id/password"
+                android:id="@+id/endDate"
                 android:background="@drawable/custom_edittext"
                 android:drawableLeft="@drawable/ic_baseline_lock_24"
-                android:drawablePadding="8dp"
                 android:hint="31.01.2023"
                 android:padding="8dp"
                 android:inputType="text"
@@ -52,11 +51,10 @@
                 android:layout_marginTop="20dp"/>
 
             <Button
-                android:id="@+id/loginButton"
+                android:id="@+id/btnHesabla"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="30dp"
-
                 android:backgroundTint="@color/purple"
                 android:text="Hesabla"
                 android:textSize="18sp"
@@ -70,77 +68,142 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="190dp"
         android:layout_margin="30dp"
+        android:background="@drawable/custom_edittext"
         app:cardCornerRadius="30dp"
-        app:cardElevation="20dp"
-        android:background="@drawable/custom_edittext">
+        app:cardElevation="20dp">
 
-        <LinearLayout
+
+        <TextView
+            android:id="@+id/loginText"
             android:layout_width="match_parent"
-            android:layout_height="350dp"
-            android:layout_gravity="center_horizontal"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:text="Nəticə"
+            android:textAlignment="center"
+            android:textColor="@color/purple"
+            android:textSize="36sp"
+            android:textStyle="bold" />
 
 
-            <TextView
-                android:id="@+id/loginText"
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nəticə"
-                android:textAlignment="center"
-                android:textColor="@color/purple"
-                android:textSize="36sp"
-                android:textStyle="bold" />
+                android:layout_marginTop="52dp"
+                android:gravity="left"
+                android:orientation="horizontal">
 
+                <TextView
+                    android:id="@+id/txtRemain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="Qalan gün:"
+                    android:textColor="@color/newcolor"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/txtRemain"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:text="Qalan gün:"
-                android:textSize="16dp"
-                android:textFontWeight="700"
-                android:textColor="@color/newcolor"
-                android:layout_margin="10dp"
-                />
-            <View
+                <TextView
+                    android:id="@+id/txtresRemainDay"
+                    android:layout_width="125dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="0"
+                    android:textColor="@color/newcolor"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_margin="5dp"
-                android:background="#D6D1D1"/>
-
-            <TextView
-                android:id="@+id/txtDurationDay"
-                android:layout_width="125dp"
                 android:layout_height="wrap_content"
-                android:text="Istifadə müddəti:"
-                android:textSize="16dp"
-                android:textFontWeight="700"
-                android:textColor="@color/newcolor"
-                android:layout_margin="10dp"
-                />
+                android:layout_marginTop="83dp"
+                android:orientation="horizontal"
+                >
 
-            <View
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_margin="5dp"
+                    android:background="#D6D1D1"/>
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_margin="5dp"
-                android:background="#D6D1D1"/>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:gravity="left"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtDurationDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="Istifadə müddəti:"
+                    android:textColor="@color/newcolor"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtResDurationDay"
+                    android:layout_width="125dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="0"
+                    android:textColor="@color/newcolor"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="110dp"
+                android:orientation="horizontal"
+                >
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_margin="5dp"
+                    android:background="#D6D1D1"/>
+            </LinearLayout>
+
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="110dp"
+            android:gravity="left"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/txtPercentage"
-                android:layout_width="80dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Faiz:"
-                android:textSize="16dp"
-                android:textFontWeight="700"
-                android:textColor="@color/newcolor"
                 android:layout_margin="10dp"
-                />
+                android:text="Faiz:"
+                android:textColor="@color/newcolor"
+                android:textSize="16dp"
+                android:textStyle="bold" />
 
-
+            <TextView
+                android:id="@+id/txtResPercentage"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="0"
+                android:textColor="@color/newcolor"
+                android:textSize="16dp"
+                android:textStyle="bold" />
 
         </LinearLayout>
+
+
+
+
     </androidx.cardview.widget.CardView>
 
 </LinearLayout>
