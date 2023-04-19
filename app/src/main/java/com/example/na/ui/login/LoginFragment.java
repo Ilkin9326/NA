@@ -1,14 +1,27 @@
 package com.example.na.ui.login;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.na.LoginMain;
+import com.example.na.MainActivity;
 import com.example.na.R;
+import com.example.na.databinding.FragmentHomeBinding;
+import com.example.na.databinding.FragmentLoginBinding;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -22,12 +35,21 @@ public class LoginFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
+    private EditText txtName;
+    private EditText txtPassword;
+    private CheckBox checkBox;
+    private final String Username = "nicat";
+    private final String Password = "nicat_1993";
+    boolean isValid = false;
+    FragmentLoginBinding loginBinding;
+
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
     public LoginFragment() {
         // Required empty public constructor
+
     }
 
     /**
@@ -61,6 +83,56 @@ public class LoginFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false);
+        View view = inflater.inflate(R.layout.fragment_login, container, false);
+        loginBinding = FragmentLoginBinding.inflate(inflater, container, false);
+        View root = loginBinding.getRoot();
+
+        Button btnLogin = loginBinding.loginButton;
+        checkBox = loginBinding.checkBox;
+        txtName = loginBinding.username;
+        txtPassword = loginBinding.password;
+
+        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    txtPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                }else{
+                    txtPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                }
+            }
+        });
+
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String username = txtName.getText().toString();
+                String password = txtPassword.getText().toString();
+                if(username.trim().isEmpty() || password.isEmpty()){
+                    Toast.makeText(getActivity(), "Username ve şifrəni daxil edin", Toast.LENGTH_SHORT).show();
+                }else {
+                    isValid = validateLogin(username, password);
+
+                    if(!isValid){
+                        Toast.makeText(getActivity(), "Username və ya şifrə yalnışdır.", Toast.LENGTH_SHORT).show();
+                    }else {
+                        Toast.makeText(getActivity(), "Uğurlu giriş edildi fragment", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getActivity(), MainActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
+                    }
+                }
+            }
+        });
+
+
+
+        return root;
+    }
+
+    private boolean validateLogin(String username, String password){
+        if(username.equals(Username) && password.equals(Password)) return true;
+
+        return false;
     }
 }

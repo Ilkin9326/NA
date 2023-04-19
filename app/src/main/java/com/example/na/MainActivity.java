@@ -1,11 +1,7 @@
 package com.example.na;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.view.Menu;
-import android.widget.Button;
-import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -26,13 +22,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-       /* boolean b = false;
-        if(!b){
-            Intent intent = new Intent(MainActivity.this, LoginMain.class);
-            MainActivity.this.startActivity(intent);
-        }*/
-
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());

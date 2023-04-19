@@ -33,6 +33,7 @@
                 android:background="@drawable/custom_edittext"
                 android:drawableLeft="@drawable/ic_baseline_person_24"
                 android:hint="23.01.2023"
+                android:inputType="date"
                 android:padding="8dp"
                 android:textColor="@color/black"
                 android:textColorHighlight="@color/cardview_dark_background" />
@@ -45,7 +46,7 @@
                 android:drawableLeft="@drawable/ic_baseline_lock_24"
                 android:hint="31.01.2023"
                 android:padding="8dp"
-                android:inputType="text"
+                android:inputType="date"
                 android:textColor="@color/black"
                 android:textColorHighlight="@color/cardview_dark_background"
                 android:layout_marginTop="20dp"/>
@@ -68,7 +69,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="190dp"
+        android:layout_height="match_parent"
         android:layout_margin="30dp"
         android:background="@drawable/custom_edittext"
         app:cardCornerRadius="30dp"
@@ -82,7 +83,7 @@
             android:text="Nəticə"
             android:textAlignment="center"
             android:textColor="@color/purple"
-            android:textSize="36sp"
+            android:textSize="30sp"
             android:textStyle="bold" />
 
 
@@ -132,7 +133,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="80dp"
+                android:layout_marginTop="90dp"
                 android:gravity="left"
                 android:orientation="horizontal">
 
@@ -161,7 +162,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="110dp"
+                android:layout_marginTop="120dp"
                 android:orientation="horizontal"
                 >
 
@@ -175,7 +176,7 @@
             <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="110dp"
+            android:layout_marginTop="120dp"
             android:gravity="left"
             android:orientation="horizontal">
 

@@ -9,6 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="whitefason">#F0EBEB</color>
     <color name="purple">#8692f7</color>
+    <color name="status_bar">#96A0F6</color>
+    <color name="status_bar1">#8F1429</color>
     <color name="newcolor">#4B5183</color>
     <color name="imageroundcolor">#43444C</color>
 </resources>

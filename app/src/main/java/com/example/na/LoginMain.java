@@ -42,7 +42,7 @@ public class LoginMain extends AppCompatActivity {
                     if(!isValid){
                         Toast.makeText(LoginMain.this, "Username və ya şifrə yalnışdır.", Toast.LENGTH_SHORT).show();
                     }else {
-                        Toast.makeText(LoginMain.this, "Uğurlu giriş edildi", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginMain.this, "Uğurlu giriş edildiiiiiiiiiiiiiiiiiii", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(LoginMain.this, MainActivity.class);
                         startActivity(intent);
                     }

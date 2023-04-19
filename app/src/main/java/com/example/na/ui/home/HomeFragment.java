@@ -12,12 +12,17 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.na.LoginMain;
 import com.example.na.R;
+import com.example.na.databinding.ActivityMainBinding;
 import com.example.na.databinding.FragmentHomeBinding;
+import com.example.na.databinding.FragmentLoginBinding;
+import com.example.na.ui.login.LoginFragment;
 
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
+    private FragmentLoginBinding loginBinding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -28,11 +33,15 @@ public class HomeFragment extends Fragment {
         View root = binding.getRoot();
 
         Button btnHesabla = binding.btnHesabla;
+
         btnHesabla.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                LoginFragment loginFragment = new LoginFragment();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.drawer_layout, loginFragment).commit();
+
+
                 String startDate = binding.startDate.getText().toString();
-                //binding.txtResDurationDay.setText("34");
                 String endDate = binding.endDate.getText().toString();
                 Toast.makeText(getActivity(), "Username ve şifrəni daxil edin"+startDate+" - "+endDate, Toast.LENGTH_SHORT).show();
             }
