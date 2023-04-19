@@ -29,7 +29,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Login"
+                android:text="Giriş"
                 android:id="@+id/loginText"
                 android:textSize="36sp"
                 android:textAlignment="center"
@@ -43,7 +43,7 @@
                 android:background="@drawable/custom_edittext"
                 android:drawableLeft="@drawable/ic_baseline_person_24"
                 android:drawablePadding="8dp"
-                android:hint="Username"
+                android:hint="İstifadəçi adı"
                 android:inputType="text"
                 android:padding="8dp"
                 android:textColor="@color/black"
@@ -57,7 +57,7 @@
                 android:background="@drawable/custom_edittext"
                 android:drawableLeft="@drawable/ic_baseline_lock_24"
                 android:drawablePadding="8dp"
-                android:hint="Password"
+                android:hint="Şifrə"
                 android:padding="8dp"
                 android:inputType="textPassword"
                 android:textColor="@color/black"
@@ -71,7 +71,7 @@
                 android:id="@+id/checkBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="show password" />
+                android:text="şifrəni göstər" />
 
             <Button
                 android:id="@+id/loginButton"
@@ -80,7 +80,7 @@
                 android:layout_marginTop="30dp"
 
                 android:backgroundTint="@color/purple"
-                android:text="Login"
+                android:text="Daxil ol"
                 android:textSize="18sp"
                 app:cornerRadius="20dp" />
 
@@ -92,8 +92,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="8dp"
-        android:text="Not yet registered? SignUp Now"
-        android:textSize="14sp"
+        android:textSize="16sp"
+        android:textStyle="bold"
         android:textAlignment="center"
         android:id="@+id/signupText"
         android:textColor="@color/purple"

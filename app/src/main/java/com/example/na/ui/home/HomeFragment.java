@@ -37,10 +37,6 @@ public class HomeFragment extends Fragment {
         btnHesabla.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LoginFragment loginFragment = new LoginFragment();
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.drawer_layout, loginFragment).commit();
-
-
                 String startDate = binding.startDate.getText().toString();
                 String endDate = binding.endDate.getText().toString();
                 Toast.makeText(getActivity(), "Username ve şifrəni daxil edin"+startDate+" - "+endDate, Toast.LENGTH_SHORT).show();

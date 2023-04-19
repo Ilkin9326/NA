@@ -5,6 +5,8 @@ import android.os.Bundle;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
@@ -15,6 +17,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.na.LoginMain;
@@ -22,6 +25,13 @@ import com.example.na.MainActivity;
 import com.example.na.R;
 import com.example.na.databinding.FragmentHomeBinding;
 import com.example.na.databinding.FragmentLoginBinding;
+import com.example.na.ui.home.HomeFragment;
+
+import org.joda.time.DateTime;
+import org.joda.time.LocalDate;
+
+import java.time.Year;
+import java.util.Date;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -37,6 +47,7 @@ public class LoginFragment extends Fragment {
 
     private EditText txtName;
     private EditText txtPassword;
+    private TextView txtFooter;
     private CheckBox checkBox;
     private final String Username = "nicat";
     private final String Password = "nicat_1993";
@@ -91,6 +102,11 @@ public class LoginFragment extends Fragment {
         checkBox = loginBinding.checkBox;
         txtName = loginBinding.username;
         txtPassword = loginBinding.password;
+        txtFooter = loginBinding.signupText;
+
+        //set current year to footer
+        LocalDate date = LocalDate.now();
+        txtFooter.setText("©"+String.valueOf(date.getYear()));
 
         checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -117,9 +133,8 @@ public class LoginFragment extends Fragment {
                         Toast.makeText(getActivity(), "Username və ya şifrə yalnışdır.", Toast.LENGTH_SHORT).show();
                     }else {
                         Toast.makeText(getActivity(), "Uğurlu giriş edildi fragment", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getActivity(), MainActivity.class);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                        startActivity(intent);
+
+
                     }
                 }
             }
