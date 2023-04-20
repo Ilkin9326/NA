@@ -1,5 +1,6 @@
 package com.example.na;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,6 +9,7 @@ import android.view.MenuItem;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -61,13 +63,31 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         String itemName = item.toString();
-        if(itemName.equals("Sign out")){
-            Intent intent = new Intent(this,LoginMain.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
+        if(itemName.equals("Çıxış")){
+            showPopup();
             return true;
         }
 
         return false;
+    }
+
+    private void showPopup() {
+        AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
+        alert.setMessage("Çıxmaq istədiyinizə əminsiniz?").setPositiveButton("Çıxış", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                logout();
+            }
+        }).setNegativeButton("Ləğv et", null);
+
+        AlertDialog alert1 = alert.create();
+        alert1.show();
+    }
+
+    private void logout() {
+        Intent intent = new Intent(this,LoginMain.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
     }
 }
