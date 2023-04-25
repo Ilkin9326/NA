@@ -28,7 +28,7 @@ public class LoginMain extends AppCompatActivity {
     private final String Username = "nicat";
     ;
     @NonNull
-    private final String Password = "n";//"nicat_1993";
+    private final String Password = "nicat_1993";;
     private CheckBox checkBox;
     private TextView txtFooter;
     boolean isValid = false;
@@ -87,6 +87,7 @@ public class LoginMain extends AppCompatActivity {
         } else if (!password.isEmpty() && (username.trim().isEmpty() || username.trim().length() < 3)) {
             txtName.setError("İstifadəçi adını daxil edin(Min 3 simvol)");
             txtName.setBackgroundResource(R.drawable.edit_text_border_color_red);
+            txtPassword.setBackgroundResource(R.drawable.custom_edittext);
         } else {
             txtName.setBackgroundResource(R.drawable.custom_edittext);
             txtPassword.setBackgroundResource(R.drawable.custom_edittext);

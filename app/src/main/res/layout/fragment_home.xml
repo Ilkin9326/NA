@@ -111,7 +111,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:padding="30dp"
+            android:padding="24dp"
             android:gravity="left"
             android:orientation="horizontal">
 
@@ -141,7 +141,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="49dp"
-            android:padding="30dp"
+            android:padding="24dp"
             android:orientation="horizontal">
 
             <View
@@ -155,7 +155,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
-            android:padding="30dp"
+            android:padding="24dp"
             android:gravity="left"
             android:orientation="horizontal">
 
@@ -185,7 +185,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="90dp"
-            android:padding="30dp"
+            android:padding="24dp"
             android:orientation="horizontal">
 
             <View
@@ -200,7 +200,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="95dp"
             android:gravity="left"
-            android:padding="30dp"
+            android:padding="24dp"
             android:orientation="horizontal">
 
             <TextView
@@ -229,7 +229,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="125dp"
-            android:padding="30dp"
+            android:padding="24dp"
             android:orientation="horizontal">
 
             <View
@@ -244,7 +244,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="125dp"
             android:gravity="left"
-            android:padding="30dp"
+            android:padding="24dp"
             android:orientation="horizontal">
 
             <TextView

@@ -81,6 +81,7 @@
                 android:backgroundTint="@color/purple"
                 android:text="Daxil ol"
                 android:textColor="@color/white"
+                android:background="@drawable/custom_edittext"
                 android:textSize="18sp"
                 app:cornerRadius="20dp" />
 
